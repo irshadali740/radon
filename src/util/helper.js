@@ -14,6 +14,26 @@ const getBatchInfo = function() {
   console.log(batchInformation)
 }
 
+// const getMissingNo = function (a)
+// {
+//     let n = a.length;
+//     let i, total=1;
+     
+//     for (i = 2; i<= (n+1); i++)
+//     {
+//         total += i;
+//         total -= a[i-2];
+//     }
+//     return total;
+// }
+
+// let arr= [1,2,3,5,6,7];
+//     let missingNumber = getMissingNo(arr);
+//     console.log(missingNumber)
+
+// module.exports.missingnumber = getMissingNo
+
+
 module.exports.printDate = printDate
 module.exports.getCurrentMonth = printMonth
 module.exports.getCohortData = getBatchInfo
