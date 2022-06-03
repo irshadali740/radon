@@ -48,6 +48,55 @@ router.get('/movies/:indexnumber', function(req, res){
     // console.log('The movie name is '+req.params.indexnumber)
     res.send(indexnumber)
 })
+
+
+router.get('/films', function(req, res){
+
+    let film =
+    [ {
+     id    : 1,
+     name  : "The Shining"
+    }, 
+        {
+      id   : 2,
+     name  : "Incendies"
+    }, 
+        {
+     id    : 3,
+     name  : "Rang de Basanti"
+    }, 
+       {
+     id    : 4,
+     name  : "Finding Nemo"
+    }]
+let filmarr = JSON.stringify(film);
+   res.send(filmarr)
+})
+
+router.get('/films/:filmid', function(req, res){
+    let film2 =
+    [ {
+     id    : 1,
+     name  : "The Shining"
+    }, 
+        {
+      id   : 2,
+     name  : "Incendies"
+    }, 
+        {
+     id    : 3,
+     name  : "Rang de Basanti"
+    }, 
+       {
+     id    : 4,
+     name  : "Finding Nemo"
+    }]
+    let filmid = req.params.
+    res.send(film2)
+})
+
+
+
 router.get('/candidates', function(req, res){
     console.log('Query paramters for this request are '+JSON.stringify(req.query))
     let gender = req.query.gender

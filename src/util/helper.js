@@ -14,6 +14,8 @@ const getBatchInfo = function() {
   console.log(batchInformation)
 }
 
+
+
 // const getMissingNo = function (a)
 // {
 //     let n = a.length;
