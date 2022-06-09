@@ -5,6 +5,10 @@ const bookSchema = new mongoose.Schema( {
     author_id: {
         type: Number,
         required: true},
+        author:{
+            type:mongoose.isValidObjectId,
+            ref:author 
+        },
         prices: Number,
         ratings: Number,
     

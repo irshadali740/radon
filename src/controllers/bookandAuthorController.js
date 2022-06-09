@@ -14,6 +14,12 @@ const createBook= async function (req, res) {
     res.send({msg: savedData})
 }
 
+const getallBook= async function (req, res) {
+    let data= req.body
+    let savedData= await BookModel.find().
+    res.send({msg: savedData})
+}
+
 const bookbychetanBhagat = async function (req,res){
     let data = await AuthorModel.find({author_name: "Chetan Bhagat"}).select("author_id")
     let bookdata = await BookModel.find({author_id:data[0].author_id})
@@ -29,8 +35,13 @@ const authoroftwostates = async function(req,res){
 }
 
 const bookcost = async function(req,res){
-    let data = await BookModel.find({price:{$gte:50,$lte:100}})
-    let bookcostdata = AuthorModel.forEach({author_id:data.author_id}).select("author_name")
+    let data = await BookModel.find({price:{$gte:50,$lte:100}}).select({author_id:1,_id:0})
+    let arr=[]
+    for (let i=0;i<bookcost.length;i++){
+    let bookcostdata = AuthorModel.forEach({author_id:data.author_id}).select({author_name:1,_id:0})
+    arr.push(bookcostdata)
+    res.send({msg: arr})
+    }
         
     // });({author_id:data.author_id}).select("author_name")
     // let bookscost = AuthorModel.forEach(bookcostdata).select("author_name")
