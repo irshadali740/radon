@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const route = require('./routes/route.js');
 const { default: mongoose } = require('mongoose');
+const { dates } = require('./controllers/bookController.js');
 const app = express();
 
 app.use(bodyParser.json());
@@ -20,6 +21,12 @@ app.use (
         next();
   }
   );
+
+//   app.use (  async function (req, res, next){
+//         console.log(dates);
+//         next();
+//     } 
+//     );
 
 app.use('/', route);
 

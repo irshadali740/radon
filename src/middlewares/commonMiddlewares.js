@@ -6,9 +6,15 @@ const mid1= function ( req, res, next) {
 }
 
 const mid2= function ( req, res, next) {
+    let length = true
+    if (length= true){
     console.log("Hi I am a middleware named Mid2")
     next()
+    }else{
+        res.send({msg: 'Lenghth is required'})
+    } 
 }
+
 
 const mid3= function ( req, res, next) {
     console.log("Hi I am a middleware named Mid3")

@@ -9,10 +9,10 @@ router.get("/test-me", function (req, res) {
     res.send("My first ever api!")
 })
 
+router.get("/createDates", commonMW.mid2, BookController.dates)
 
 
-
-router.post("/createBook", BookController.createBook  )
+router.get("/createUser", BookController.createBook )
 
 
 

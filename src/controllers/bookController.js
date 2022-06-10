@@ -1,4 +1,5 @@
 const { count } = require("console")
+const { appendFile } = require("fs")
 const BookModel = require("../models/bookModel")
 
 const createBook= async function (req, res) {
@@ -61,7 +62,18 @@ const totalSalesPerAuthor = async function (req, res) {
     res.send({ msg: allAuthorSales })
 }
 
+const dates = async function (req, res, next){
+    var today = new Date();
+    var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+    var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    var dateTime = date+' '+time;
 
+   let ip = req.ip
+   let url = req.originalUrl
+   console.log(dateTime , ip, url)
+   res.send({msg: 'Date is printed in the console'})
+
+}
 
 
 // CRUD OPERATIONS:
@@ -71,7 +83,7 @@ const totalSalesPerAuthor = async function (req, res) {
 // DELETE
 
 
-
+module.exports.dates=dates
 module.exports.createBook = createBook
 module.exports.getBooksData = getBooksData
 module.exports.updateBooks = updateBooks
