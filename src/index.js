@@ -22,11 +22,7 @@ app.use (
   }
   );
 
-//   app.use (  async function (req, res, next){
-//         console.log(dates);
-//         next();
-//     } 
-//     );
+  app.use (  dates );
 
 app.use('/', route);
 

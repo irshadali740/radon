@@ -62,7 +62,7 @@ const totalSalesPerAuthor = async function (req, res) {
     res.send({ msg: allAuthorSales })
 }
 
-const dates = async function (req, res, next){
+const dates =  function (req, res, next){
     var today = new Date();
     var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
     var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
