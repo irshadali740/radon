@@ -1,26 +1,30 @@
 const express = require('express');
 const router = express.Router();
 // const UserModel= require("../models/userModel.js")
-const UserController= require("../controllers/userController")
-const BookController= require("../controllers/bookController")
+const OrderController = require ("../controllers/Controller")
 const commonMW = require ("../middlewares/commonMiddlewares")
 
 router.get("/test-me", function (req, res) {
-    res.send("My first ever api!")
-})
+    res.send("My first ever api!")})
+
+router.post("/createProduct", OrderController.createproduct)
+
+router.post("/createUser",commonMW.mid1, OrderController.createuser)
+
+router.post("/createOrder", commonMW.mid1, commonMW.mid2, OrderController.createorder)
 
 
 
 
-router.post("/createBook", BookController.createBook  )
 
 
 
 
-router.post("/createUser", UserController.createUser)
+
+
+
+
 // router.get("/getUsersData", UserController.getUsersData)
-
-
 // const mid1= function ( req, res, next) {
 //     console.log("Hi I am a middleware named Mid1")
 //     // logic
@@ -48,7 +52,7 @@ router.post("/createUser", UserController.createUser)
 
 
 
-router.get("/basicRoute", commonMW.mid1, commonMW.mid2, commonMW.mid3, commonMW.mid4, UserController.basicCode)
+
 
 
 
