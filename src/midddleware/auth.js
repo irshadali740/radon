@@ -1,8 +1,7 @@
 const jwt = require("jsonwebtoken");
 
-const mid1 = async function(req,res,next){
-    let token = req.headers["x-Auth-token"];
-    if (!token) token = req.headers["x-auth-token"];
+const authentification = async function(req,res,next){
+    let token = req.headers["x-auth-token"];
   
     //If no token is present in the request header return error
     if (!token) return res.send({ status: false, msg: "token must be present" });
@@ -17,4 +16,14 @@ const mid1 = async function(req,res,next){
     next()
 }
 
-module.exports.mid1=mid1
+   const autherisation = async function(req,res,next){
+    let token = req.headers["x-auth-token"];
+    let decodedToken = jwt.verify(token, "functionup-radon");
+    let userToBeModified = req.params.userId
+    let userLoggedIn = decodedToken.userId
+    if(userToBeModified != userLoggedIn) return res.send({status: false, msg: 'User logged is not allowed to modify the requested users data'});
+    next()
+}
+
+module.exports.authentification=authentification
+module.exports.autherisation=autherisation
