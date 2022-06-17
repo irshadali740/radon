@@ -46,3 +46,13 @@ Create API's to do each of the following:
                     "url": "https://i.imgflip.com/5mvxax.jpg",
                     "page_url": "https://imgflip.com/i/5mvxax"
                 }
+
+
+
+
+
+
+https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/findByDistrict?district_id=512&date=18-06-2022
+
+
+key = 5c73ea4995196e0c0b025e329c3ce7aa
