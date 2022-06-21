@@ -14,7 +14,7 @@ const getBatchInfo = function() {
   console.log(batchInformation)
 }
 
-
+kajashxshgasccfcjasasgasj
 
 // const getMissingNo = function (a)
 // {
